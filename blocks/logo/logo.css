@@ -1,0 +1,14 @@
+.logo {
+    transition: .5s;
+}
+.logo:hover {
+    opacity: .8;
+}
+@media screen and (max-width: 630px) {
+    .logo {
+        width: 103.74px;
+        height: 24.4px;
+        margin-top: 28px;
+        margin-left: 17px;
+    }
+}

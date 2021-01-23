@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mesto</title>
+    <link rel="stylesheet" href="./pages/index.css">
+</head>
+<body class="body">
+    <div class="page">
+        <header class="header">
+            <a href="#" target="_blank" rel="noopener"><img src="./images/logo.svg" class="logo" alt="логотип"></a>
+            <div class="line"></div>
+        </header>
+        <main>
+            <section class="profile">
+                <div class="profile__info-box">
+                    <img src="./images/avatar.jpg" alt="аватар" class="profile__avatar">
+                    <div class="profile__info">
+                        <div class="profile__top">
+                            <h1 class="profile__name">Жак-Ив Кусто</h1>
+                            <button type="button" class="profile__edit-button" aria-label="Редактировать форму"></button>
+                        </div>
+                        <h2 class="profile__job">Исследователь океана</h2>
+                    </div>
+                </div>
+                <div class="profile__button-box">
+                    <button class="profile__add-botton"></button>
+                </div>
+            </section>
+            <section class="cards">
+                <div class="card">
+                    <img src="./images/church.jpg" alt="церковь" class="card__photo">
+                    <div class="card__box">
+                        <div class="card__info">
+                            <h3 class="card__title">Карачаевск</h3>
+                            <button class="card__like"></button>  
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="./images/sunrise.jpg" alt="рассвет" class="card__photo">
+                    <div class="card__box">
+                        <div class="card__info">
+                            <h3 class="card__title">Гора Эльбрус</h3>
+                            <button class="card__like"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="./images/mountain.jpg" alt="гора" class="card__photo">
+                    <div class="card__box">
+                        <div class="card__info">
+                            <h3 class="card__title">Домбай</h3>
+                            <button class="card__like"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="./images/sunrise.jpg" alt="рассвет" class="card__photo">
+                    <div class="card__box">
+                        <div class="card__info">
+                            <h3 class="card__title">Гора Эльбрус</h3>
+                            <button class="card__like"></button>  
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="./images/mountain.jpg" alt="гора" class="card__photo">
+                    <div class="card__box">
+                        <div class="card__info">
+                            <h3 class="card__title">Домбай</h3>
+                            <button class="card__like"></button>   
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="./images/church.jpg" alt="церковь" class="card__photo">
+                    <div class="card__box">
+                        <div class="card__info">
+                            <h3 class="card__title">Карачаево-Черкесия</h3>
+                            <button class="card__like"></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <h3 class="footer__text">&copy; 2021 Mesto Russia</h3>
+        </footer>
+    </div>
+    <div class="popup">
+        <div class="popup__container">
+            <h3 class="popup__title">Редактировать профиль</h3>
+            <form class="popup__form">
+                <input class="popup__input popup__input_name" type="text" placeholder="Имя" required>
+                <input class="popup__input popup__input_job" type="text" placeholder="О себе" required>
+                <button class="popup__save" type="submit">Сохранить</button>
+            </form>
+            <button type="button" class="popup__close" aria-label="Закрыть форму"></button>
+        </div>
+    </div>
+    <script src="./vendor/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+.profile__top {
+    display: flex;
+    align-items: flex-end;
+    padding-right: 40px;
+}
+@media screen and (max-width: 630px) {
+    .profile__top {
+        padding-right: 0;
+    }
+}
