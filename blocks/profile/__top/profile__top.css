@@ -1,9 +1,9 @@
 .profile__top {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     padding-right: 40px;
 }
-@media screen and (max-width: 630px) {
+@media screen and (max-width: 670px) {
     .profile__top {
         padding-right: 0;
     }

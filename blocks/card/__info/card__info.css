@@ -3,8 +3,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 25px;
-    margin-right: 15px;
-    margin-bottom: 31px;
-    margin-left: 21px;
+    padding-top: 25px;
+    padding-right: 15px;
+    padding-bottom: 31px;
+    padding-left: 21px;
+    background: #FFFFFF;
+    border-radius: 0px 0px 10px 10px;
 }

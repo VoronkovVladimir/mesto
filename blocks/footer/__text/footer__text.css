@@ -7,7 +7,7 @@
     color: #545454;
     margin: 0;
 }
-@media screen and (max-width: 630px) {
+@media screen and (max-width: 670px) {
     .footer__text {
         font-size: 14px;
         line-height: 17px;

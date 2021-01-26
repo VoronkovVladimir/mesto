@@ -14,7 +14,7 @@
         margin-right: auto;
     }
 }
-@media screen and (max-width: 630px) {
+@media screen and (max-width: 670px) {
     .cards {
         max-width: 282px;
         grid-template-columns: repeat(1, 1fr);

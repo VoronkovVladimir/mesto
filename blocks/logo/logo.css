@@ -4,7 +4,7 @@
 .logo:hover {
     opacity: .8;
 }
-@media screen and (max-width: 630px) {
+@media screen and (max-width: 670px) {
     .logo {
         width: 103.74px;
         height: 24.4px;

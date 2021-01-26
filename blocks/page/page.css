@@ -9,7 +9,7 @@
         padding-right: 10px;
     }
 }
-@media screen and (max-width: 630px) {
+@media screen and (max-width: 670px) {
     .page {
         padding: 0;
     }

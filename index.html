@@ -10,7 +10,6 @@
     <div class="page">
         <header class="header">
             <a href="#" target="_blank" rel="noopener"><img src="./images/logo.svg" class="logo" alt="логотип"></a>
-            <div class="line"></div>
         </header>
         <main>
             <section class="profile">
@@ -19,68 +18,54 @@
                     <div class="profile__info">
                         <div class="profile__top">
                             <h1 class="profile__name">Жак-Ив Кусто</h1>
-                            <button type="button" class="profile__edit-button" aria-label="Редактировать форму"></button>
+                            <button type="submit" class="profile__edit-button" aria-label="Редактировать форму"></button>
                         </div>
-                        <h2 class="profile__job">Исследователь океана</h2>
+                        <p class="profile__job">Исследователь океана</p>
                     </div>
                 </div>
-                <div class="profile__button-box">
-                    <button class="profile__add-botton"></button>
-                </div>
+                <button class="profile__add-botton" type="submit"></button>
             </section>
             <section class="cards">
                 <div class="card">
                     <img src="./images/church.jpg" alt="церковь" class="card__photo">
-                    <div class="card__box">
-                        <div class="card__info">
-                            <h3 class="card__title">Карачаевск</h3>
-                            <button class="card__like"></button>  
-                        </div>
+                    <div class="card__info">
+                        <h3 class="card__title">Карачаевск</h3>
+                        <button class="card__like" type="submit"></button>  
                     </div>
                 </div>
                 <div class="card">
                     <img src="./images/sunrise.jpg" alt="рассвет" class="card__photo">
-                    <div class="card__box">
                         <div class="card__info">
                             <h3 class="card__title">Гора Эльбрус</h3>
-                            <button class="card__like"></button>
+                            <button class="card__like" type="submit"></button>
                         </div>
-                    </div>
                 </div>
                 <div class="card">
                     <img src="./images/mountain.jpg" alt="гора" class="card__photo">
-                    <div class="card__box">
-                        <div class="card__info">
-                            <h3 class="card__title">Домбай</h3>
-                            <button class="card__like"></button>
-                        </div>
+                    <div class="card__info">
+                        <h3 class="card__title">Домбай</h3>
+                        <button class="card__like" type="submit"></button>
                     </div>
                 </div>
                 <div class="card">
                     <img src="./images/sunrise.jpg" alt="рассвет" class="card__photo">
-                    <div class="card__box">
-                        <div class="card__info">
-                            <h3 class="card__title">Гора Эльбрус</h3>
-                            <button class="card__like"></button>  
-                        </div>
+                    <div class="card__info">
+                        <h3 class="card__title">Гора Эльбрус</h3>
+                        <button class="card__like" type="submit"></button>  
                     </div>
                 </div>
                 <div class="card">
                     <img src="./images/mountain.jpg" alt="гора" class="card__photo">
-                    <div class="card__box">
-                        <div class="card__info">
-                            <h3 class="card__title">Домбай</h3>
-                            <button class="card__like"></button>   
-                        </div>
+                    <div class="card__info">
+                        <h3 class="card__title">Домбай</h3>
+                        <button class="card__like" type="submit"></button>   
                     </div>
                 </div>
                 <div class="card">
                     <img src="./images/church.jpg" alt="церковь" class="card__photo">
-                    <div class="card__box">
-                        <div class="card__info">
-                            <h3 class="card__title">Карачаево-Черкесия</h3>
-                            <button class="card__like"></button>
-                        </div>
+                    <div class="card__info">
+                        <h3 class="card__title">Карачаево-Черкесия</h3>
+                        <button class="card__like" type="submit"></button>
                     </div>
                 </div>
             </section>
@@ -92,14 +77,14 @@
     <div class="popup">
         <div class="popup__container">
             <h3 class="popup__title">Редактировать профиль</h3>
-            <form class="popup__form">
-                <input class="popup__input popup__input_name" type="text" placeholder="Имя" required>
-                <input class="popup__input popup__input_job" type="text" placeholder="О себе" required>
+            <form name="editProfile" class="popup__form">
+                <input class="popup__input popup__input_name" type="text" name="name" placeholder="Имя" required>
+                <input class="popup__input popup__input_job" type="text" name="job" placeholder="О себе" required>
                 <button class="popup__save" type="submit">Сохранить</button>
             </form>
             <button type="button" class="popup__close" aria-label="Закрыть форму"></button>
         </div>
     </div>
-    <script src="./vendor/index.js"></script>
+    <script src="./scripts/index.js"></script>
 </body>
 </html>

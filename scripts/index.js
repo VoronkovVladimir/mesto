@@ -13,17 +13,24 @@ function popupToggle () {
     popup.classList.toggle('popup_opened');
 }
 
-popupOpenButton.addEventListener('click', popupToggle);
+function popupOpened (evt) {
+    evt.preventDefault();
+    popup.classList.toggle('popup_opened');
 
-popupCloseButton.addEventListener('click', popupToggle);
+    nameInput.value = profileName.textContent;
+    jobInput.value = profileJob.textContent;
+}
 
 function formSubmitHandler (evt) {
     evt.preventDefault();
 
     profileName.textContent = nameInput.value;
     profileJob.textContent = jobInput.value;
-
 }
+
+popupOpenButton.addEventListener('click', popupOpened);
+
+popupCloseButton.addEventListener('click', popupToggle);
 
 formElement.addEventListener('submit', formSubmitHandler); 
 

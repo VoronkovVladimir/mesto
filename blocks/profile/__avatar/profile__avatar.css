@@ -3,7 +3,7 @@
     max-height: 120px;
     border-radius: 50%;
 }
-@media screen and (max-width: 630px) {
+@media screen and (max-width: 670px) {
     .profile__avatar {
         display: flex;
         justify-content: center;
