@@ -10,7 +10,7 @@ const saveButton = document.querySelector('.popup__save');
 const profileName = document.querySelector('.profile__name');
 const profileJob = document.querySelector('.profile__job');
 
-const popupAdd = document.querySelector('.popup__add');
+const popupAdd = document.querySelector('.popup_add');
 const popupOpenAddButton = document.querySelector('.profile__add-botton');
 const popupCloseAddButton = document.querySelector('.popup__close-add');
 const titleInput = document.querySelector('.popup__input_title');
@@ -20,7 +20,7 @@ const saveAddButton = document.querySelector('.popup__add-save');
 
 const cardLikeButton = document.querySelector('.card__like');
 
-const popupBigImage = document.querySelector('.popup__big-image');
+const popupBigImage = document.querySelector('.popup_big-image');
 const popupBigImageClose = document.querySelector('.popup__close-big-image');
 const popupImage = document.querySelector('.popup__image');
 const popupCaption = document.querySelector('.popup__caption');
