@@ -9,7 +9,7 @@
     transform: translate(-50%, -50%);
     padding: 34px 36px 37px 36px;
     display: block;
-    box-sizing:border-box;
+    box-sizing: border-box;
 }
 @media screen and (max-width: 670px) {
     .popup__container {

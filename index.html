@@ -26,48 +26,7 @@
                 <button class="profile__add-botton" type="button"></button>
             </section>
             <section class="cards">
-                <div class="card">
-                    <img src="./images/church.jpg" alt="церковь" class="card__photo">
-                    <div class="card__info">
-                        <h3 class="card__title">Карачаевск</h3>
-                        <button class="card__like" type="button"></button>  
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="./images/sunrise.jpg" alt="рассвет" class="card__photo">
-                        <div class="card__info">
-                            <h3 class="card__title">Гора Эльбрус</h3>
-                            <button class="card__like" type="button"></button>
-                        </div>
-                </div>
-                <div class="card">
-                    <img src="./images/mountain.jpg" alt="гора" class="card__photo">
-                    <div class="card__info">
-                        <h3 class="card__title">Домбай</h3>
-                        <button class="card__like" type="button"></button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="./images/sunrise.jpg" alt="рассвет" class="card__photo">
-                    <div class="card__info">
-                        <h3 class="card__title">Гора Эльбрус</h3>
-                        <button class="card__like" type="button"></button>  
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="./images/mountain.jpg" alt="гора" class="card__photo">
-                    <div class="card__info">
-                        <h3 class="card__title">Домбай</h3>
-                        <button class="card__like" type="button"></button>   
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="./images/church.jpg" alt="церковь" class="card__photo">
-                    <div class="card__info">
-                        <h3 class="card__title">Карачаево-Черкесия</h3>
-                        <button class="card__like" type="button"></button>
-                    </div>
-                </div>
+
             </section>
         </main>
         <footer class="footer">
@@ -85,6 +44,36 @@
             <button type="button" class="popup__close" aria-label="Закрыть форму"></button>
         </div>
     </div>
+    <div class="popup popup__add">
+        <div class="popup__container">
+            <h3 class="popup__title">Новое место</h3>
+            <form name="add-profile" class="popup__form popup__add-form">
+                <input class="popup__input popup__input_title" type="text" name="title" placeholder="Название" required>
+                <input class="popup__input popup__input_link" type="text" name="link" placeholder="Ссылка на картинку" required>
+                <button class="popup__save popup__add-save" type="submit">Создать</button>
+            </form>
+            <button type="button" class="popup__close popup__close-add" aria-label="Закрыть форму"></button>
+        </div>
+    </div>
+    <div class="popup__big-image">
+        <div class="popup__container-big-image">
+        <figure class="popup__figure">
+            <img class="popup__image" src="#" alt="#">
+            <figcaption class="popup__caption"></figcaption>
+        </figure>
+        <button type="button" class="popup__close-big-image" aria-label="Закрыть окно"></button>
+        </div>
+    </div>
+    <template class="template">
+    <div class="card">
+        <img class="card__photo card__popup-image">
+            <div class="card__info">
+                <h3 class="card__title"></h3>
+                <button class="card__like" type="button" aria-label="Лайк"></button>
+            </div>
+                <button class="card__delete" type="button" aria-label="Удалить"></button>
+    </div>
+    </template>
     <script src="./scripts/index.js"></script>
 </body>
 </html>

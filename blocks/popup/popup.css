@@ -5,5 +5,8 @@
     overflow: hidden;
     position: fixed;
     top: 0px;
-    display: none;
+    display: flex;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility .1s, opacity .3s linear;
 }

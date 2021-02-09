@@ -1,10 +1,9 @@
 .card__like {
     width: 22px;
     height: 19px;
-    background-image: url(../../../images/heart.svg);
+    background: url(../../../images/heart.svg);
     background-position: 50%;
     background-repeat: no-repeat;
-    background-color: #FFFFFF;
     cursor: pointer;
     border: none;
     box-sizing: border-box;
@@ -14,7 +13,6 @@
 }
 .card__like:active {
     outline: none;
-    background-image: url(../../../images/heart-active.svg);
 }
 .card__like:focus { 
     outline: none;
