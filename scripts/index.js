@@ -2,7 +2,7 @@ const popupEditProfile = document.querySelector('.popup_edit-profile');
 const popupEditProfileOpenBtn = document.querySelector('.profile__edit-button');
 const popupEditProfileCloseBtn = document.querySelector('.popup__close');
 
-const formElEditProfile = document.querySelector('.popup_edit-form');
+const formElEditProfile = document.querySelector('.popup__edit-form');
 const nameInput = document.querySelector('.popup__input_name');
 const jobInput = document.querySelector('.popup__input_job');
 const popupEditProfileSaveBtn = document.querySelector('.popup__save');
@@ -15,7 +15,7 @@ const popupAddOpenBtn = document.querySelector('.profile__add-botton');
 const popupAddCloseBtn = document.querySelector('.popup__close-add');
 const titleInput = document.querySelector('.popup__input_title');
 const linkInput = document.querySelector('.popup__input_link');
-const formAddElement = document.querySelector('.popup_add-form');
+const formAddElement = document.querySelector('.popup__add-form');
 const popupAddSaveBtn = document.querySelector('.popup__add-save');
 
 const popupBigImage = document.querySelector('.popup_big-image');
