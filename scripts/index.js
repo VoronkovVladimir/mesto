@@ -5,7 +5,7 @@ const popupEditProfileCloseBtn = document.querySelector('.popup__close');
 const formElEditProfile = document.querySelector('.popup__edit-form');
 const nameInput = document.querySelector('.popup__input_name');
 const jobInput = document.querySelector('.popup__input_job');
-const popupEditProfileSaveBtn = document.querySelector('.popup__save');
+const popupEditProfileSaveBtn = document.querySelector('.popup__button');
 
 const profileName = document.querySelector('.profile__name');
 const profileJob = document.querySelector('.profile__job');
@@ -22,6 +22,7 @@ const popupBigImage = document.querySelector('.popup_big-image');
 const popupBigImageCloseBtn = document.querySelector('.popup__close-big-image');
 const popupImage = document.querySelector('.popup__image');
 const popupCaption = document.querySelector('.popup__caption');
+
 
 const initialCards = [ // Массив шесть карточек «из коробки»
     {
@@ -136,6 +137,18 @@ function closePopup (popup) { // общая функция закрытия по
   popup.classList.remove('popup_opened');
 }
 
+function closePopupViaOverlay (evt, popup) { // функция закрытия попапа при нажатии на оверлей область
+if (evt.target.classList.contains('popup') || evt.target.classList.contains('popup__close')) 
+{
+  closePopup(popup);
+}
+}
+
+  function closePopupKeyEsc (evt, popup) { // функция закрытия попапа при нажатии на кнопку esc
+    if (evt.key === 'Escape') {
+      closePopup(popup);
+    }
+  };
 
 popupBigImageCloseBtn.addEventListener('click', function () {closePopup (popupBigImage)}); // слушатель закрытия попапа картинки
 
@@ -150,3 +163,13 @@ popupEditProfileOpenBtn.addEventListener('click', openPopupEditProfile);
 popupEditProfileCloseBtn.addEventListener('click', function () {closePopup (popupEditProfile)});
 popupEditProfileSaveBtn.addEventListener('click', function () {closePopup (popupEditProfile)});
 formElEditProfile.addEventListener('submit', handlerFormEditProfile);
+
+// слушатели попапов закрытие при нажатии по оверлей
+popupEditProfile.addEventListener('click', (evt) => { closePopupViaOverlay(evt, popupEditProfile) });
+popupAdd.addEventListener('click', (evt) => { closePopupViaOverlay(evt, popupAdd) });
+popupBigImage.addEventListener('click', (evt) => { closePopupViaOverlay(evt, popupBigImage) });
+
+// слушатели попапов закрытие при нажатии на кнопку esc
+document.addEventListener('keydown', (evt) => { closePopupKeyEsc(evt, popupEditProfile) });
+document.addEventListener('keydown', (evt) => { closePopupKeyEsc(evt, popupAdd) });
+document.addEventListener('keydown', (evt) => { closePopupKeyEsc(evt, popupBigImage) });

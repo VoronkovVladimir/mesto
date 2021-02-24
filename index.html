@@ -34,34 +34,46 @@
         </footer>
     </div>
     <div class="popup popup_edit-profile">
-        <div class="popup__container">
+        <div class="popup__container popup_overlay">
             <h3 class="popup__title">Редактировать профиль</h3>
-            <form name="edit-profile" class="popup__form popup__edit-form">
-                <input class="popup__input popup__input_name" type="text" name="name" placeholder="Имя" required>
-                <input class="popup__input popup__input_job" type="text" name="job" placeholder="О себе" required>
-                <button class="popup__save" type="submit">Сохранить</button>
+            <form name="edit-profile" class="popup__form popup__edit-form" novalidate>
+                <label class="popup__field">
+                    <input class="popup__input popup__input_name" id="name" type="text" name="name" placeholder="Имя" minlength="2" maxlength="40" required>
+                    <span class="popup__error name-error" id="name-error"></span>
+                </label>
+                <label class="popup__field">
+                    <input class="popup__input popup__input_job" id="job" type="text" name="job" placeholder="О себе" minlength="2" maxlength="200" required>
+                    <span class="popup__error job-error" id="job-error"></span>
+                </label>
+                <button class="popup__button" type="submit">Сохранить</button>
             </form>
             <button type="button" class="popup__close" aria-label="Закрыть форму"></button>
         </div>
     </div>
     <div class="popup popup_add">
-        <div class="popup__container">
+        <div class="popup__container popup_overlay">
             <h3 class="popup__title">Новое место</h3>
-            <form name="add-profile" class="popup__form popup__add-form">
-                <input class="popup__input popup__input_title" type="text" name="title" placeholder="Название" required>
-                <input class="popup__input popup__input_link" type="url" name="link" placeholder="Ссылка на картинку" required>
-                <button class="popup__save popup__add-save" type="submit">Создать</button>
+            <form name="add-profile" class="popup__form popup__add-form" novalidate>
+                <label class="popup__field">
+                    <input class="popup__input popup__input_title" id="title" type="text" name="title" placeholder="Название" minlength="2" maxlength="30" required>
+                    <span class="popup__error title-error" id="title-error"></span>
+                </label>
+                <label class="popup__field">
+                    <input class="popup__input popup__input_link" id="link" type="url" name="link" placeholder="Ссылка на картинку" required>
+                    <span class="popup__error link-error" id="link-error"></span>
+                </label>
+                <button class="popup__button popup__add-save" type="submit">Создать</button>
             </form>
             <button type="button" class="popup__close popup__close-add" aria-label="Закрыть форму"></button>
         </div>
     </div>
     <div class="popup popup_big-image">
-        <div class="popup__container-big-image">
+        <div class="popup__container-big-image popup_overlay">
         <figure class="popup__figure">
             <img class="popup__image" src="#" alt="#">
             <figcaption class="popup__caption"></figcaption>
         </figure>
-        <button type="button" class="popup__close-big-image" aria-label="Закрыть окно"></button>
+        <button type="button" class="popup__close popup__close-big-image" aria-label="Закрыть окно"></button>
         </div>
     </div>
     <template class="template">
@@ -75,5 +87,6 @@
     </div>
     </template>
     <script src="./scripts/index.js"></script>
+    <script src="./scripts/validate.js"></script>
 </body>
 </html>
