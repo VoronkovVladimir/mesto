@@ -1,3 +1,12 @@
+const validationConfig = {
+    formSelector: '.popup__form',
+    inputSelector: '.popup__input',
+    submitButtonSelector: '.popup__button',
+    inactiveButtonClass: 'popup__button_disabled',
+    inputErrorClass: 'popup__input_type_error',
+    errorClass: 'popup__error_visible'
+};
+
 const showInputError = (formElement, inputElement, errorMessage, inputErrorClass, errorClass) => { //функция показа ошибки при валидации
     const errorElement = formElement.querySelector(`.${inputElement.id}-error`); // находим спэн ошибки
     inputElement.classList.add(inputErrorClass);
@@ -57,11 +66,9 @@ const toggleButtonState = (inputList, buttonElement, inactiveButtonClass) => { /
     buttonElement.classList.remove(inactiveButtonClass);
     }
 };
-enableValidation({
-    formSelector: '.popup__form',
-    inputSelector: '.popup__input',
-    submitButtonSelector: '.popup__button',
-    inactiveButtonClass: 'popup__button_disabled',
-    inputErrorClass: 'popup__input_type_error',
-    errorClass: 'popup__error_visible'
-  }); // Вызовем функцию
+enableValidation(validationConfig); // Вызовем функцию
+
+
+
+
+
