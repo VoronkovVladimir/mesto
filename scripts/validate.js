@@ -66,6 +66,16 @@ const toggleButtonState = (inputList, buttonElement, inactiveButtonClass) => { /
     buttonElement.classList.remove(inactiveButtonClass);
     }
 };
+
+function hideFormErrors (form) { // очистки полей ввода от ошибок и проверки кнопки в попапе
+    const inputList = Array.from(form.querySelectorAll(validationConfig.inputSelector));
+    const buttonElement = form.querySelector(validationConfig.submitButtonSelector);
+    inputList.forEach((inputElement) => {
+    hideInputError(form, inputElement, validationConfig.inputErrorClass, validationConfig.errorClass);
+    });
+    toggleButtonState(inputList, buttonElement, validationConfig.inactiveButtonClass);
+};
+
 enableValidation(validationConfig); // Вызовем функцию
 
 

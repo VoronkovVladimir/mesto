@@ -38,20 +38,20 @@ function deleteCardUser (evt) {  // функция удаления карточ
   targetCard.remove();
 }
 
-function closePopupKeyEsc (evt, popup) { // функция закрытия попапа при нажатии на кнопку esc
+function closePopupKeyEsc (evt) { // функция закрытия попапа при нажатии на кнопку esc
   if (evt.key === 'Escape') {
-    closePopup(popup);
+    closePopup(document.querySelector('.popup_opened'));
   }
 }
 
 function closePopup (popup) { // общая функция закрытия попапа
   popup.classList.remove('popup_opened');
-  document.removeEventListener('keydown', (evt) => { closePopupKeyEsc(evt, popup) }); // удаление слушателя попапа закрытия при нажатию на кнопку esc
+  document.removeEventListener('keydown', closePopupKeyEsc); // удаление слушателя попапа закрытия при нажатию на кнопку esc
 }
 
 function openPopup (popup) { // общая функция открытия попапа
   popup.classList.add('popup_opened');
-  document.addEventListener('keydown', (evt) => { closePopupKeyEsc(evt, popup) }); // добавление слушателя попапа закрытия при нажатию на кнопку esc
+  document.addEventListener('keydown', closePopupKeyEsc); // добавление слушателя попапа закрытия при нажатию на кнопку esc
 }
 
 function closePopupViaOverlay (evt, popup) { // функция закрытия попапа при нажатии на оверлей область
@@ -91,13 +91,12 @@ function getCard (item) {
   return newCard;
 }
 
-function addCard () {
+function renderInitialCards () {
   const htmlCards = initialCards
   .map(getCard)
   cardsContainer.append(...htmlCards);
 }
-addCard();
-// --------------------------------------------------------------
+renderInitialCards();
 
 function openPopupEditProfile (evt) { // функция открытия попапа и добавление "имя" и "о себе" с html разметки в форму
   evt.preventDefault();
@@ -131,10 +130,7 @@ function submitAddCardPopup (evt) { // функция добавления ка�
 
 // слушатели попапа редактирования профиля
 popupEditProfileOpenBtn.addEventListener('click', (evt) => {
-  const inputList = Array.from(formElEditProfile.querySelectorAll(validationConfig.inputSelector));
-  inputList.forEach((inputElement) => {
-    hideInputError(formElEditProfile, inputElement, validationConfig.inputErrorClass, validationConfig.errorClass);
-  });
+  hideFormErrors(formElEditProfile);
   openPopupEditProfile(evt);
 });
 popupEditProfileCloseBtn.addEventListener('click', function () {closePopup (popupEditProfile)});
@@ -143,12 +139,7 @@ formElEditProfile.addEventListener('submit', handlerFormEditProfile);
 
 // слушатели попапа добавления карточек
 popupAddOpenBtn.addEventListener('click', () => {
-  const inputList = Array.from(formAddElement.querySelectorAll(validationConfig.inputSelector)); 
-  const buttonElement = formAddElement.querySelector(validationConfig.submitButtonSelector);
-  inputList.forEach((inputElement) => {
-    hideInputError(formAddElement, inputElement, validationConfig.inputErrorClass, validationConfig.errorClass);
-  });
-  toggleButtonState(inputList, buttonElement, validationConfig.inactiveButtonClass);
+  hideFormErrors(formAddElement);
   formAddElement.reset();
   openPopup (popupAdd);
 });
