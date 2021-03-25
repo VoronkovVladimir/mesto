@@ -63,6 +63,7 @@ export class FormValidator { // создаем класс валидации
     enableValidation () { // функция которая найдёт и переберёт все формы на странице
         this._formElement.addEventListener('submit', (evt) => { // У каждой формы отменим стандартное поведение
             evt.preventDefault();
+            this._toggleButtonState();
         });
         this._setEventListeners();
     };

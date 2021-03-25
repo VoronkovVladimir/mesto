@@ -21,10 +21,10 @@ const linkInput = document.querySelector('.popup__input_link');
 const formAddElement = document.querySelector('.popup__add-form');
 const popupAddSaveBtn = document.querySelector('.popup__add-save');
 
-const popupBigImage = document.querySelector('.popup_big-image');
+export const popupBigImage = document.querySelector('.popup_big-image');
 const popupBigImageCloseBtn = document.querySelector('.popup__close-big-image');
-const popupImage = document.querySelector('.popup__image');
-const popupCaption = document.querySelector('.popup__caption');
+export const popupImage = document.querySelector('.popup__image');
+export const popupCaption = document.querySelector('.popup__caption');
 
 const templateCard = document.querySelector('.template');
 const cardsContainer = document.querySelector('.cards');
@@ -65,18 +65,18 @@ const initialCards = [ // Массив шесть карточек «из кор
   }
 ]; 
 
-function closePopupKeyEsc (evt) { // функция закрытия попапа при нажатии на кнопку esc
+export function closePopupKeyEsc (evt) { // функция закрытия попапа при нажатии на кнопку esc
   if (evt.key === 'Escape') {
     closePopup(document.querySelector('.popup_opened'));
   }
 }
 
-function closePopup (popup) { // общая функция закрытия попапа
+export function closePopup (popup) { // общая функция закрытия попапа
   popup.classList.remove('popup_opened');
   document.removeEventListener('keydown', closePopupKeyEsc); // удаление слушателя попапа закрытия при нажатию на кнопку esc
 }
 
-function openPopup (popup) { // общая функция открытия попапа
+export function openPopup (popup) { // общая функция открытия попапа
   popup.classList.add('popup_opened');
   document.addEventListener('keydown', closePopupKeyEsc); // добавление слушателя попапа закрытия при нажатию на кнопку esc
 }
@@ -88,7 +88,7 @@ function closePopupViaOverlay (evt, popup) { // функция закрытия 
     }
 }
 
-function submitAddCardPopup (evt) { // функция добавления карточки пользователя с помощью ввода названия и ссылки
+function handleSubmitAddCardPopup (evt) { // функция добавления карточки пользователя с помощью ввода названия и ссылки
   evt.preventDefault();
 
   const cardTitleUser = titleInput.value; // переменная инпута Название
@@ -97,9 +97,7 @@ function submitAddCardPopup (evt) { // функция добавления ка�
   const cardElementUser = cardUser.generateCard(); // создаем карточку и возвращает наружу
   cardsContainer.prepend(cardElementUser); // добавляем в DOM
 
-  titleInput.value = '';
-  linkInput.value = '';
-
+  formAddElement.reset();
   closePopup (popupAdd);
 }
 
@@ -112,7 +110,7 @@ function openPopupEditProfile (evt) { // функция открытия поп�
   openPopup (popupEditProfile); // вызываем функцию открытия попапа
 }
 
-function handlerFormEditProfile (evt) { // функция сохранения попапа и передача "имя" и "о себе" с формы в html разметку
+function handleEditFormProfileOpen (evt) { // функция сохранения попапа и передача "имя" и "о себе" с формы в html разметку
   evt.preventDefault();
   
   profileName.textContent = nameInput.value;
@@ -134,22 +132,26 @@ editProfileValidation.enableValidation();
 
 // слушатели попапа редактирования профиля
 popupEditProfileOpenBtn.addEventListener('click', (evt) => {
-  editProfileValidation.hideFormErrors();
   openPopupEditProfile(evt);
+  editProfileValidation.hideFormErrors();
 });
 popupEditProfileCloseBtn.addEventListener('click', function () {closePopup (popupEditProfile)});
-popupEditProfileSaveBtn.addEventListener('click', function () {closePopup (popupEditProfile)});
-formElEditProfile.addEventListener('submit', handlerFormEditProfile);
+formElEditProfile.addEventListener('submit', (evt) => {
+  handleEditFormProfileOpen(evt);
+  closePopup (popupEditProfile);
+});
 
 // слушатели попапа добавления карточек
 popupAddOpenBtn.addEventListener('click', () => {
-  formAddValidation.hideFormErrors();
   formAddElement.reset();
   openPopup (popupAdd);
+  formAddValidation.hideFormErrors();
 });
 popupAddCloseBtn.addEventListener('click', () => { closePopup (popupAdd) });
-popupAddSaveBtn.addEventListener('click', () => { closePopup (popupAdd) });
-formAddElement.addEventListener('submit', submitAddCardPopup);
+formAddElement.addEventListener('submit', (evt) => {
+  handleSubmitAddCardPopup(evt);
+  closePopup (popupAdd);
+});
 
 // слушатель закрытия попапа картинки
 popupBigImageCloseBtn.addEventListener('click', function () {closePopup (popupBigImage)});
